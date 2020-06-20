@@ -15,6 +15,30 @@ func Sum(x []int) int{
 	return summed
 }
 
+func SumAll(numbersToSum ...[]int) []int{
+	//lengthOfNumbers := len(numbersToSum)
+	//sums := make([]int, lengthOfNumbers)
+	var sums []int
+
+	for _, numbers := range numbersToSum {
+		sums = append(sums, Sum(numbers))
+	}
+	return sums
+}
+
+func SumAllTails(numToSum ...[]int) []int{
+	var sums []int
+	for _, numbers := range numToSum{
+		if len(numbers) ==0 {
+			sums = append(sums, 0)
+		}else {
+			tail := numbers[1:]
+			sums = append(sums, Sum(tail))
+		}
+	}
+	return sums
+}
+
 func main(){
 	x := []int{1,2,3}
 	fmt.Println(Sum(x))
