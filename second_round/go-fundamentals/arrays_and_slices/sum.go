@@ -29,3 +29,16 @@ func SumAll(numbersToSum ...[]int) []int {
 	}
 	return sums
 }
+
+//SumAllTails is to add all numbers in a slice besides the head
+func SumAllTails(tailsToSum ...[]int) []int {
+	var tailsSum []int
+	for _, numbers := range tailsToSum {
+		if len(numbers) == 0 {
+			tailsSum = append(tailsSum, 0)
+		} else {
+			tailsSum = append(tailsSum, Sum(numbers[1:]))
+		}
+	}
+	return tailsSum
+}
