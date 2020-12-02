@@ -3,11 +3,16 @@ package main
 import "fmt"
 
 const englishHelloPrefix = "Hello, "
+const spanishHelloPrefix = "Hola, "
+const spanish = "Spanish"
 
 //Hello function that returns english greeting
 func Hello(name, lang string) string {
-	if lang == "Spanish" {
-		return "Hola, " + name
+	if lang == spanish {
+		return spanishHelloPrefix + name
+	}
+	if lang == "French" {
+		return "Bonjour, " + name
 	}
 	if name == "" {
 		name = "World"
@@ -16,5 +21,5 @@ func Hello(name, lang string) string {
 }
 
 func main() {
-	fmt.Println(Hello("Tinashe", "Spanish"))
+	fmt.Println(Hello("Tinashe", ""))
 }
