@@ -23,7 +23,7 @@ func Hello(name, lang string) string {
 	}
 	return greetingPrefix(lang) + name
 }
-//comment
+//comment   
 
 func greetingPrefix(lang string) (prefix string) {
 	switch lang {
