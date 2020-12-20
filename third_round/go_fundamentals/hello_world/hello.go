@@ -10,6 +10,7 @@ const frenchHelloPrefix = "Bonjour, "
 const shona = "Shona"
 const shonaHelloPrefix = "Madini, "
 // comments
+// testing
 
 //Hello function that returns english greeting
 func Hello(name, lang string) string {
