@@ -16,10 +16,15 @@ func greet(user string) {
 	fmt.Println("Hello " + user)
 }
 
-// Return Values
+//Return Values
 func add(a, b int) int64 {
 	c := a + b
 	return int64(c)
+}
+
+//Multiple return values
+func addMulti(a, b int) (int, int) {
+	return a + b, a * b
 }
 
 func main() {
@@ -27,4 +32,9 @@ func main() {
 	greet("Tinashe")
 	res := add(1, 5)
 	fmt.Println(res)
+	addRes, multiRes := addMulti(2, 5)
+	fmt.Println(addRes, multiRes)
+	//using the blank identifier in Go
+	_, multiRes2 := addMulti(1, 5)
+	fmt.Println(multiRes2)
 }
