@@ -12,3 +12,14 @@ func Sum(input []int) int {
 
 	return res
 }
+
+//SumAll function adds individual slices and returns their sums as a slice
+func SumAll(numbersToSum ...[]int) (sums []int) {
+	// lengthOfNumbers := len(numbersToSum)
+	// sums := make([]int, lengthOfNumbers)
+
+	for _, value := range numbersToSum {
+		sums = append(sums, Sum(value))
+	}
+	return
+}

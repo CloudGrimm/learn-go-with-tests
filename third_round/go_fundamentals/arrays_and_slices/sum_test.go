@@ -1,6 +1,7 @@
 package main
 
 import (
+	"reflect"
 	"testing"
 )
 
@@ -15,5 +16,16 @@ func TestSum(t *testing.T) {
 			t.Errorf("got %d want %d given, %v", got, want, numbers)
 		}
 	})
+}
 
+func TestSumAll(t *testing.T) {
+	x := []int{1, 2, 3}
+	y := []int{1, 2, 3, 4, 5}
+
+	got := SumAll(x, y)
+	want := []int{6, 15}
+
+	if !reflect.DeepEqual(got, want) {
+		t.Errorf("got %v want %v", got, want)
+	}
 }
