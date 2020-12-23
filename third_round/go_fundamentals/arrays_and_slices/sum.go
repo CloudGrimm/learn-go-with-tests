@@ -23,3 +23,15 @@ func SumAll(numbersToSum ...[]int) (sums []int) {
 	}
 	return
 }
+
+//SumAllTails function to only sum the tails of slices
+func SumAllTails(numbersToSum ...[]int) (sums []int) {
+	for _, value := range numbersToSum {
+		if len(value) == 0 {
+			sums = append(sums, 0)
+		} else {
+			sums = append(sums, Sum(value[1:]))
+		}
+	}
+	return
+}
