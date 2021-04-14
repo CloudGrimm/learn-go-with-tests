@@ -23,3 +23,7 @@ func (cir Circle) Area() (area float64){
 	area = math.Pi * cir.Radius * cir.Radius
 	return
 }
+
+type Shape interface {
+	Area() float64
+}
