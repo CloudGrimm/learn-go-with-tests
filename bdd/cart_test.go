@@ -29,6 +29,7 @@ var _ = Describe("Shopping cart", func() {
 		})
 	})
 
+	//context comment
 	Context("when an existing item is added", func() {
 		Context("the shopping cart", func() {
 			It("has the same number of unique items as earlier", func() {})
