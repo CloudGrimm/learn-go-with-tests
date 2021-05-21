@@ -7,6 +7,8 @@ import (
 
 type Bitcoin int
 
+
+
 type Stringer interface {
 	String() string
 }
@@ -27,12 +29,13 @@ func (w *Wallet) Deposit(amount Bitcoin){
 func (w *Wallet) Balance() Bitcoin{
 	return w.balance
 }
+var ErrInsufficientFunds = errors.New("cannot withdraw, insufficient funds")
 
 //Withdraw function
 func (w *Wallet) Withdraw(amount Bitcoin) error{
 
 	if amount > w.balance{
-		return errors.New("oh no")
+		return ErrInsufficientFunds
 	}
 	w.balance -= amount
 	return nil
