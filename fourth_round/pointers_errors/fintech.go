@@ -15,10 +15,17 @@ type Wallet struct {
 	balance Bitcoin
 }
 
+//Deposit function
 func (w *Wallet) Deposit(amount Bitcoin){
 	w.balance += amount
 }
 
+//Balance function
 func (w *Wallet) Balance() Bitcoin{
 	return w.balance
+}
+
+//Withdraw function
+func (w *Wallet) Withdraw(amount Bitcoin){
+	w.balance -= amount
 }
