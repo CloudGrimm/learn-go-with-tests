@@ -19,10 +19,7 @@ func TestWallet(t *testing.T){
 	})
 
 	t.Run("Withdraw", func(t *testing.T) {
-		wallet := Wallet{}
-
-		//first deposit money in the wallet
-		wallet.Deposit(Bitcoin(20))
+		wallet := Wallet{balance: Bitcoin(20)}
 		//withdraw the money
 		wallet.Withdraw(Bitcoin(10))
 		got := wallet.Balance()
